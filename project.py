@@ -1,5 +1,6 @@
 import sys
 import os
+import json
 
 def parsowanie():
     if len(sys.argv) != 3:
@@ -12,6 +13,11 @@ def parsowanie():
     output_ext = os.path.splitext(output_file)[1].lower()
 
     return input_file, output_file, input_ext, output_ext
+def wczytywanie_json(file_path):
+    with open(file_path, 'r') as file:
+        wczytane = json.load(file)
+    return wczytane
+
 
 if __name__ == "__main__":
     input_file, output_file, input_ext, output_ext = parsowanie()
