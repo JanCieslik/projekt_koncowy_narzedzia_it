@@ -17,7 +17,9 @@ def wczytywanie_json(file_path):
     with open(file_path, 'r') as file:
         wczytane = json.load(file)
     return wczytane
-
+def zapisywanie_json(file_path, wczytane):
+    with open(file_path, 'w') as file:
+        json.dump(wczytane, file, indent=4)
 
 if __name__ == "__main__":
     input_file, output_file, input_ext, output_ext = parsowanie()
