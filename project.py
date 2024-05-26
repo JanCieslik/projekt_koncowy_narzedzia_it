@@ -1,7 +1,7 @@
 import sys
 import os
 import json
-import yml
+import yaml
 def parsowanie():
     if len(sys.argv) != 3:
         print("program.exe pathFile1.x pathFile2.y")
@@ -22,8 +22,11 @@ def zapisywanie_json(file_path, wczytane):
         json.dump(wczytane, file, indent=4)
 def wczytywanie_yml(file_path):
     with open(file_path, 'r') as file_yml:
-        wczytane_yml = yml.safe_load(file_yml)
+        wczytane_yml = yaml.safe_load(file_yml)
     return wczytane_yml
+def zapisywanie_yml(file_path, wczytane_yml):
+    with open(file_path, 'w') as file_yml:
+        yaml.dump(wczytane_yml, file_yml, default_flow_style=False)
 
 
 if __name__ == "__main__":
