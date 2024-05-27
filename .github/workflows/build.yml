@@ -25,7 +25,9 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: .\installResources.ps1
+      run: |
+       Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+       .\installResources.ps1
 
     - name: Build EXE
       run: |
