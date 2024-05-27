@@ -25,9 +25,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        .\installResources.ps1
+      run: .\installResources.ps1
 
     - name: Build EXE
       run: |
