@@ -32,6 +32,8 @@ def wczytywanie_xml(file_path):
     tree = et.parse(file_path)
     root = tree.getroot()
     return tree, root
+def zapisywanie_xml(file_path, tree):
+    tree.write(file_path, encodings='utf-8', xml_declaration=True)
 
 
 if __name__ == "__main__":
