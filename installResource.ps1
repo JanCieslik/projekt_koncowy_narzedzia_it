@@ -1,3 +1,6 @@
+python -m pip install --upgrade pip
+
 pip install pyinstaller
-pip install pyqt5
-pip install pyyaml
+pip install xmltodict
+pip install PyYAML
+pip install jsonschema
