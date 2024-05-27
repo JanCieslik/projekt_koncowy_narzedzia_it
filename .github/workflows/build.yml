@@ -27,7 +27,7 @@ jobs:
     - name: Install dependencies
       run: |
        Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-       .\installResources.ps1
+       ./installResources.ps1
 
     - name: Build EXE
       run: |
