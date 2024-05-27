@@ -2,6 +2,7 @@ import sys
 import os
 import json
 import yaml
+import xml.etree.ElementTree as et
 def parsowanie():
     if len(sys.argv) != 3:
         print("program.exe pathFile1.x pathFile2.y")
@@ -27,6 +28,10 @@ def wczytywanie_yml(file_path):
 def zapisywanie_yml(file_path, wczytane_yml):
     with open(file_path, 'w') as file_yml:
         yaml.dump(wczytane_yml, file_yml, default_flow_style=False)
+def wczytywanie_xml(file_path):
+    tree = et.parse(file_path)
+    root = tree.getroot()
+    return tree, root
 
 
 if __name__ == "__main__":
